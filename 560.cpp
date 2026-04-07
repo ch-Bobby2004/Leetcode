@@ -38,3 +38,6 @@ int main() {
     
     return 0;
 }
+
+// Time Complexity (TC): O(n) where n is the length of the input array.
+// Space Complexity (SC): O(n) due to the hash map storing prefix sums.
