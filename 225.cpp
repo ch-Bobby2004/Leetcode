@@ -1,0 +1,35 @@
+#include <queue>
+using namespace std;
+
+class MyStack {
+private:
+    queue<int> q;
+
+public:
+    MyStack() {}
+
+    void push(int x) {
+        q.push(x);
+        int size = q.size();
+        
+        // Rotate previous elements behind new element
+        for (int i = 0; i < size - 1; i++) {
+            q.push(q.front());
+            q.pop();
+        }
+    }
+
+    int pop() {
+        int top = q.front();
+        q.pop();
+        return top;
+    }
+
+    int top() {
+        return q.front();
+    }
+
+    bool empty() {
+        return q.empty();
+    }
+};
